@@ -54,6 +54,11 @@ var instructionPages = [ // add as a list as many pages as you like
 ********************/
 
 var is_done = false;
+
+var finish = function() {
+    document.removeEventListener('keydown', response_handler, true);
+    currentview = new Questionnaire();
+};
 	
 var response_handler = function(e) {
 	// if (!listening) return;
@@ -112,6 +117,11 @@ var response_handler = function(e) {
 	// window.alert("Saved!");
 	// }
 	// window.alert("Interesting click!");
+
+	if (is_done) {
+		finish()
+	}
+
 
 };
 
