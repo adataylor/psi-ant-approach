@@ -57,6 +57,9 @@ var is_done = false;
 
 var finish = function() {
     document.removeEventListener('keydown', response_handler, true);
+    jsPsych.endCurrentTimeline();
+    jsPsych.endExperiment("We are done")
+
     currentview = new Questionnaire();
 };
 	
@@ -373,9 +376,9 @@ var Questionnaire = function() {
 		psiTurk.saveData({
 			success: function() {
 			    clearInterval(reprompt); 
-                psiTurk.computeBonus('compute_bonus', function(){
-                	psiTurk.completeHIT(); // when finished saving compute bonus, the quit
-                }); 
+                // psiTurk.computeBonus('compute_bonus', function(){
+                // 	psiTurk.completeHIT(); // when finished saving compute bonus, the quit
+                // }); 
 
 
 			}, 
