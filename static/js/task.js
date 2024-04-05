@@ -53,6 +53,75 @@ var instructionPages = [ // add as a list as many pages as you like
 *
 ********************/
 
+var is_done = false;
+	
+var response_handler = function(e) {
+	// if (!listening) return;
+	var keyCode = e.keyCode;
+	var response;
+
+	switch (keyCode) {
+		case 82:
+			// "R"
+			response = "red";
+			break;
+		case 71:
+			// "G"
+			response = "green";
+			break;
+		case 66:
+			// "B"
+			response = "blue";
+			break;
+
+		// ADA ADDITIONS
+		case 32: // Page up
+			response="robot_me"
+			break;
+
+		case 38: // Page up
+			response="robot_away"
+			break;
+		case 40: // Page down
+			response="robot_me";
+			break;
+
+		case 27: // ESC
+			response='completed_with_escape';
+			is_done = true;
+			break;
+
+		default:
+			response = "";
+			break;
+	}
+
+	// if (response.length>0) {
+	// 	listening = false;
+	// 	var hit = response == stim[1];
+	var buttonTime = new Date().getTime();
+	// var rt = buttonTime - wordon;
+
+	psiTurk.recordTrialData({'phase':"TEST",
+                             'guessTime':buttonTime,
+                              'keycode': keyCode,
+                              'response_type': response
+                         	}
+                         );
+	psiTurk.saveData();
+	// window.alert("Saved!");
+	// }
+	// window.alert("Interesting click!");
+
+};
+
+// Register the response handler that is defined above to handle any
+// key down events.
+// $("body").focus().keydown(response_handler); 
+
+document.addEventListener('keydown', response_handler, true);
+
+
 /********************
 * STROOP TEST       *
 ********************/
@@ -128,7 +197,7 @@ var ant_trialvars = [
   {cue: '/static/images/bottom-cue.jpg',  targ: '/static/images/bottom-noflank-r.jpg', correct_resp: 'ArrowRight', flanker_type: 'NEUTRAL', flanker_middle: 'R', flanker_loc: 'DOWN', cue_type: 'SPATIAL'}
 ];
 
-ant_trialvars = jsPsych.randomization.repeat(ant_trialvars,6); //repeat each trial type 6 times for a grand total of 288 trials
+ant_trialvars = jsPsych.randomization.repeat(ant_trialvars, 1); //repeat each trial type 6 times for a grand total of 288 trials
 
 /* Instruction Trials */
 
