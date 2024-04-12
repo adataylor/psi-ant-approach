@@ -94,6 +94,25 @@ var response_handler = function(e) {
 			response="robot_me";
 			break;
 
+		case 37: // Page up
+			response="distractor-left"
+			break;
+		
+		case 39: // Page right
+			response="distractor-right";
+			break;
+
+		case 32: // Page up
+			response="robot_me"
+			break;
+
+		case 87: // W up
+			response="robot_away"
+			break;
+		case 83: // S down
+			response="robot_me";
+			break;
+
 		case 27: // ESC
 			response='completed_with_escape';
 			is_done = true;
@@ -210,7 +229,7 @@ var ant_trialvars = [
   {cue: '/static/images/bottom-cue.jpg',  targ: '/static/images/bottom-noflank-r.jpg', correct_resp: 'ArrowRight', flanker_type: 'NEUTRAL', flanker_middle: 'R', flanker_loc: 'DOWN', cue_type: 'SPATIAL'}
 ];
 
-ant_trialvars = jsPsych.randomization.repeat(ant_trialvars, 1); //repeat each trial type 6 times for a grand total of 288 trials
+ant_trialvars = jsPsych.randomization.repeat(ant_trialvars, 10); //repeat each trial type 6 times for a grand total of 288 trials
 
 /* Instruction Trials */
 
