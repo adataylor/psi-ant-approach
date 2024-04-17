@@ -435,6 +435,7 @@ var Questionnaire = function() {
                 }); 
             }, 
             error: prompt_resubmit});
+	    window.close();
 	});
     
 	
