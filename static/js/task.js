@@ -69,19 +69,6 @@ var response_handler = function(e) {
 	var response;
 
 	switch (keyCode) {
-		case 82:
-			// "R"
-			response = "red";
-			break;
-		case 71:
-			// "G"
-			response = "green";
-			break;
-		case 66:
-			// "B"
-			response = "blue";
-			break;
-
 		// ADA ADDITIONS
 		case 32: // Page up
 			response="robot_me"
@@ -152,7 +139,6 @@ var response_handler = function(e) {
 // $("body").focus().keydown(response_handler); 
 
 document.addEventListener('keydown', response_handler, true);
-
 
 /********************
 * STROOP TEST       *
@@ -233,19 +219,26 @@ ant_trialvars = jsPsych.randomization.repeat(ant_trialvars, 10); //repeat each t
 
 /* Instruction Trials */
 
-var inst_01 = '<p>Welcome. This part of the experiment will take about 20 minutes to complete.</p>Before you begin, please make sure that you are in a quiet location free from distractions.</p><p>(Press <b>&#8594;</b> on your keyboard to continue.)</p>';
-var inst_02 = '<p>In this experiment you will see arrows pointing left or right</br>(e.g <b>&#8594; &#8594; &#8594; &#8594; &#8594;</b> or <b>&#8594; &#8594; &#8592; &#8594; &#8594;</b>)</br>presented randomly at the top or bottom of the screen.</p>'+
-              '<p>Your job is to indicate which way the central (middle) arrow is pointing by pressing the corresponding arrow key on your keyboard.</p>'+
-              '<p>Occasionally, you will only see a single arrow on the screen. When this happens, simply indicate which way the single arrow is pointing by pressing the corresponding arrow key on your keyboard.</p>'+
-              '<p>(Press &#8592; to go back or &#8594; to continue)</p>';
-var inst_03 = '<p>Before the arrows appear, an asterisk (*) will occasionally come up somewhere on the screen.</p>'+
-              '<p>Irrespective of whether or where the * appears, it is important that you respond as quickly and accurately as possible by pressing the arrow key corresponding to the direction of the center arrow.</p>'+
-              '<p>(Press &#8592; to go back or &#8594; to begin!)</p>';
+var inst_01 = '<div style="font-size:30px;"><p>Welcome! </p><br/><p>(Press <b>&#8594;</b> on your keyboard to continue.)</p></div>';
+var inst_02 = '<div style="font-size:30px;"><p>In this experiment you will see arrows pointing left or right</br>(e.g <b>&#8594; &#8594; &#8594; &#8594; &#8594;</b> or <b>&#8594; &#8594; &#8592; &#8594; &#8594;</b>)</br>presented randomly at the top or bottom of the screen.</p><br /><br />'+
+              '<p>Your job is to indicate which way the central (middle) arrow is pointing <br /> by pressing the corresponding arrow key on your keyboard.</p><br />'+
+              '<p>Occasionally, you will only see a single arrow on the screen. <br /> When this happens, simply indicate which way the single arrow is pointing <br /> by pressing the corresponding arrow key on your keyboard.</p>'+
+              '<p>(Press &#8592; to go back or &#8594; to continue)</p></div>';
+var inst_03 = '<div style="font-size:30px;"><p>Before the arrows appear, an asterisk (*) will occasionally come up somewhere on the screen.</p><br />'+
+              '<p>No matter whether or where the * appears,<br /> it is important that you respond as quickly and accurately as possible <br />by pressing the arrow key matching the direction of the center arrow.</p>'+
+              '<br /><br /><p>(Press &#8592; to go back or &#8594; to continue)</p></div>';
+var inst_04 = '<div style="font-size:30px;"><p>The robot will be moving between the six stations in the room.</p><br />'+
+              '<p>If the robot is coming to your station, please press the DOWN arrow.</p>'+
+              '<p>If the robot is going to another station, please press the UP arrow.</p>'+
+              '<p>The earlier you correctly guess the robot\'s destination, the higher your score. However "</p>'+
+              '<br /><br /><p>(Press &#8592; to go back or &#8594; to begin!)</p></div>';
+
+var inst_04 = 'FIX ME';
 
 
 var ant_inst = {
   type: 'instructions',
-  pages: [inst_01, inst_02, inst_03],
+  pages: [inst_01, inst_02, inst_03, inst_04],
   post_trial_gap: 1000
 };
 
@@ -314,7 +307,7 @@ var img_preload = [
   '/static/images/bottom-incongruent-l.jpg', '/static/images/bottom-incongruent-r.jpg', '/static/images/bottom-noflank-l.jpg',
   '/static/images/bottom-noflank-r.jpg', '/static/images/center-cue.jpg', '/static/images/fixation.jpg', '/static/images/top-congruent-l.jpg',
   '/static/images/top-congruent-r.jpg', '/static/images/top-cue.jpg', '/static/images/top-incongruent-l.jpg',
-  '/static/images/top-incongruent-r.jpg', '/static/images/top-noflank-l.jpg', '/static/images/top-noflank-r.jpg'
+  '/static/images/top-incongruent-r.jpg', '/static/images/top-noflank-l.jpg', '/static/images/top-noflank-r.jpg' '/static/images/fixation-flash.jpg'
 ];
 
 var ant_preload = {
