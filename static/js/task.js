@@ -105,6 +105,11 @@ var response_handler = function(e) {
 			is_done = true;
 			break;
 
+		case 49: // Hit 1 button
+			response="completed_with_1"
+			is_done = true;
+			break;
+
 		default:
 			response = "";
 			break;
@@ -430,12 +435,11 @@ var Questionnaire = function() {
 	    record_responses();
 	    psiTurk.saveData({
             success: function(){
-                psiTurk.computeBonus('compute_bonus', function() { 
-                	psiTurk.completeHIT(); // when finished saving compute bonus, the quit
-                }); 
+                psiTurk.completeHIT();
+                window.close();
             }, 
             error: prompt_resubmit});
-	    window.close();
+	    
 	});
     
 	
