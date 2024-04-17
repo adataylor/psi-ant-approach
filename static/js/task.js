@@ -116,6 +116,19 @@ var response_handler = function(e) {
 	var buttonTime = new Date().getTime();
 	// var rt = buttonTime - wordon;
 
+	if (response == 'robot_me' || response == 'robot_away') {
+		// If it was a robot keypress, give a visual response
+
+		// document.getElementById('jspsych-image-keyboard-response-stimulus').src='/static/images/fixation-flash.jpg';
+		document.body.style.backgroundColor = "#03befc";
+
+	   setTimeout(() => {
+	       // document.getElementById('jspsych-image-keyboard-response-stimulus').src='/static/images/fixation.jpg'; //remove the class after 0.2 seconds
+		   	document.body.style.backgroundColor = "#03befc";
+	   }, 200)
+
+	}
+
 	psiTurk.recordTrialData({'phase':"TEST",
                              'guessTime':buttonTime,
                               'keycode': keyCode,
@@ -224,7 +237,7 @@ var inst_02 = '<div style="font-size:30px;"><p>In this experiment you will see a
               '<p>Your job is to indicate which way the central (middle) arrow is pointing <br /> by pressing the corresponding arrow key on your keyboard.</p><br />'+
               '<p>Occasionally, you will only see a single arrow on the screen. <br /> When this happens, simply indicate which way the single arrow is pointing <br /> by pressing the corresponding arrow key on your keyboard.</p>'+
               '<p>(Press &#8592; to go back or &#8594; to continue)</p></div>';
-var inst_03 = '<div style="font-size:30px;"><p>Before the arrows appear, an asterisk (*) will occasionally come up somewhere on the screen.</p><br />'+
+var inst_03 = '<div style="font-size:30px;"><p>Before the arrows appear, <br /> an asterisk (*) will occasionally come up somewhere on the screen.</p><br />'+
               '<p>No matter whether or where the * appears,<br /> it is important that you respond as quickly and accurately as possible <br />by pressing the arrow key matching the direction of the center arrow.</p>'+
               '<br /><br /><p>(Press &#8592; to go back or &#8594; to continue)</p></div>';
 var inst_04 = '<div style="font-size:30px;"><p>The robot will be moving between the six stations in the room.</p><br />'+
@@ -307,7 +320,7 @@ var img_preload = [
   '/static/images/bottom-incongruent-l.jpg', '/static/images/bottom-incongruent-r.jpg', '/static/images/bottom-noflank-l.jpg',
   '/static/images/bottom-noflank-r.jpg', '/static/images/center-cue.jpg', '/static/images/fixation.jpg', '/static/images/top-congruent-l.jpg',
   '/static/images/top-congruent-r.jpg', '/static/images/top-cue.jpg', '/static/images/top-incongruent-l.jpg',
-  '/static/images/top-incongruent-r.jpg', '/static/images/top-noflank-l.jpg', '/static/images/top-noflank-r.jpg' '/static/images/fixation-flash.jpg'
+  '/static/images/top-incongruent-r.jpg', '/static/images/top-noflank-l.jpg', '/static/images/top-noflank-r.jpg', '/static/images/fixation-flash.png'
 ];
 
 var ant_preload = {
