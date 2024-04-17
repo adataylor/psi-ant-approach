@@ -232,34 +232,37 @@ ant_trialvars = jsPsych.randomization.repeat(ant_trialvars, 10); //repeat each t
 
 /* Instruction Trials */
 
-var inst_01 = '<div style="font-size:30px;"><p>Welcome! </p><br/><p>(Press <b>&#8594;</b> on your keyboard to continue.)</p></div>';
-var inst_02 = '<div style="font-size:30px;"><p>In this experiment you will see arrows pointing left or right</br>(e.g <b>&#8594; &#8594; &#8594; &#8594; &#8594;</b> or <b>&#8594; &#8594; &#8592; &#8594; &#8594;</b>)</br>presented randomly at the top or bottom of the screen.</p><br /><br />'+
+var inst_01 = '<div style="font-size:30px; line-height:1.6;"><p>Welcome! </p><br/><p>(Press <b>&#8594;</b> on your keyboard to continue.)</p></div>';
+var inst_02 = '<div style="font-size:30px; line-height:1.6;"><p>In this experiment you will see arrows pointing left or right</br>(e.g <b>&#8594; &#8594; &#8594; &#8594; &#8594;</b> or <b>&#8594; &#8594; &#8592; &#8594; &#8594;</b>)</br>presented randomly at the top or bottom of the screen.</p><br /><br />'+
               '<p>Your job is to indicate which way the central (middle) arrow is pointing <br /> by pressing the corresponding arrow key on your keyboard.</p><br />'+
               '<p>Occasionally, you will only see a single arrow on the screen. <br /> When this happens, simply indicate which way the single arrow is pointing <br /> by pressing the corresponding arrow key on your keyboard.</p>'+
               '<p>(Press &#8592; to go back or &#8594; to continue)</p></div>';
-var inst_03 = '<div style="font-size:30px;"><p>Before the arrows appear, <br /> an asterisk (*) will occasionally come up somewhere on the screen.</p><br />'+
+var inst_03 = '<div style="font-size:30px; line-height:1.6;"><p>Before the arrows appear, <br /> an asterisk (*) will occasionally come up somewhere on the screen.</p><br />'+
               '<p>No matter whether or where the * appears,<br /> it is important that you respond as quickly and accurately as possible <br />by pressing the arrow key matching the direction of the center arrow.</p>'+
               '<br /><br /><p>(Press &#8592; to go back or &#8594; to continue)</p></div>';
-var inst_04 = '<div style="font-size:30px;"><p>The robot will be moving between the six stations in the room.</p><br />'+
+var inst_04 = '<div style="font-size:30px; line-height:1.6;"><p>The robot will be moving between the six stations in the room.</p><br />'+
               '<p>If the robot is coming to your station, please press the DOWN arrow.</p>'+
               '<p>If the robot is going to another station, please press the UP arrow.</p>'+
               '<p>The earlier you correctly guess the robot\'s destination, the higher your score. However "</p>'+
               '<br /><br /><p>(Press &#8592; to go back or &#8594; to begin!)</p></div>';
 
-var inst_04 = "<p>Your secondary task is to identify where the robot is going before it arrives.</p>" + 
-				"<p><ul><li>For each stop the robot makes, you can select \"TO ME\" with the DOWN arrow, or \"SOMEWHERE ELSE\" with the UP arrow.</li>" + 
-		  "<li>The earlier you identify the robot's location CORRECTLY, the higher your score will be.</li>" +
-		  "<li>However, if you identify the robot's location INCORRECTLY, then the penalty will be equally high.</li>" +
-		  "<li>You are allowed to update your guess, to decrease the penalty, but you will not get additional credit.</li>" +
-		"</ul>" +
-        "</p>" +
-			'<br /> You can test this now by hitting the UP or DOWN arrows. <br />' +
-			'If you let the experimenters know you are ready, <br />the robot will move between the six stations, <br /> and you can practice indicating whether it is going TO YOU or AWAY.';
+var inst_04 = "<div style='font-size:26px; line-height:1.6;'><p>Your secondary task is to identify where the robot is going before it arrives.</p> <br />" + 
+				"<p>For each stop the robot makes, <br />you can select \"TO ME\" with the DOWN arrow, <br />or \"SOMEWHERE ELSE\" with the UP arrow.</p><br />" + 
+		  		"<p>The earlier you identify the robot's location CORRECTLY, the higher your score will be.</p><br />" +
+		  		"<p>However, if you identify the robot's location INCORRECTLY, then the penalty will be equally high.</p><br />" + 
+		  		"<p>You are allowed to update your guess, to decrease the penalty, but you will not get additional credit.</p><br />" + 
+		  		"<p>You can test this now by hitting the UP or DOWN arrows.</p> </div>"
+
+var inst_05 = 	"<div style='font-size:26px; line-height:1.6;'>" +
+				'<p>If you let the experimenters know you are ready, <br />the robot will move between the six stations, <br /> and you can practice indicating whether it is going TO YOU or AWAY.</p></div>';
+
+var inst_06 = "<div style='font-size:36px; line-height:1.6;'><p>Now that we have practiced identifying the robot's location, <br /> please signal to the experimenters when you are ready to begin.</p>" + 
+				"<br /><p>You will have a short period to adjust to the primary task <br /> before the robot begins moving.</p></div>";
 
 
 var ant_inst = {
   type: 'instructions',
-  pages: [inst_01, inst_02, inst_03, inst_04],
+  pages: [inst_01, inst_02, inst_03, inst_04, inst_05, inst_06],
   post_trial_gap: 1000
 };
 
