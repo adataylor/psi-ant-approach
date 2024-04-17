@@ -124,7 +124,7 @@ var response_handler = function(e) {
 
 	   setTimeout(() => {
 	       // document.getElementById('jspsych-image-keyboard-response-stimulus').src='/static/images/fixation.jpg'; //remove the class after 0.2 seconds
-		   	document.body.style.backgroundColor = "#03befc";
+		   	document.body.style.backgroundColor = "white";
 	   }, 200)
 
 	}
