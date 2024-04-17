@@ -246,7 +246,15 @@ var inst_04 = '<div style="font-size:30px;"><p>The robot will be moving between 
               '<p>The earlier you correctly guess the robot\'s destination, the higher your score. However "</p>'+
               '<br /><br /><p>(Press &#8592; to go back or &#8594; to begin!)</p></div>';
 
-var inst_04 = 'FIX ME';
+var inst_04 = "<p>Your secondary task is to identify where the robot is going before it arrives.</p>" + 
+				"<p><ul><li>For each stop the robot makes, you can select \"TO ME\" with the DOWN arrow, or \"SOMEWHERE ELSE\" with the UP arrow.</li>" + 
+		  "<li>The earlier you identify the robot's location CORRECTLY, the higher your score will be.</li>" +
+		  "<li>However, if you identify the robot's location INCORRECTLY, then the penalty will be equally high.</li>" +
+		  "<li>You are allowed to update your guess, to decrease the penalty, but you will not get additional credit.</li>" +
+		"</ul>" +
+        "</p>" +
+			'<br /> You can test this now by hitting the UP or DOWN arrows. <br />' +
+			'If you let the experimenters know you are ready, <br />the robot will move between the six stations, <br /> and you can practice indicating whether it is going TO YOU or AWAY.';
 
 
 var ant_inst = {
